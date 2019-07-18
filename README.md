@@ -1,6 +1,7 @@
 # dotnetcore-api-template
 
 A C# template for building API projects with:
+  * Docker
   * IoC (inversion of control)
   * service pattern
   * repository pattern
@@ -12,28 +13,51 @@ A C# template for building API projects with:
     * Queries - do not use aggregates
   
 # Layers
-  * Domain layer - domain entities + data + behaviour, aggregates, domain events, repository interfaces
-    * Entities - have unique identifiers
+  * Domain layer
+    * Entities (data + behaviour) - have unique identifiers
     * Value Objects - immutable. cannot be changed once created.
     * Aggregates - composition of multiple entities
+    * Domain events
     * Repository interface
       * Commands - use aggregates. transactional data.
       * Queries - use simple and fast ORM such as Dapper. it is recommended to use dynamic types.
-  * Infrastructure layer - repository implementation, data persistence layer, logging, etc. Only has knowledge of Domain layer but only through interfaces.
-  * Service layer - domain and application logic services. Only has knowledge of Domain and Infrastruture layer through interfaces.
-  * Application layer - Only call the service layer. This is the only layer that has knowledge of the implementation classes. Mapping of domain/data models to view models. This defines the api data contract.
-  
+    * Domain services
+      * domain related logic
+      
+  * Infrastructure layer - Only has knowledge of Domain layer but only through interfaces.
+    * repository implementation
+    * data persistence layer
+    * logging
+    * etc. 
+    
+  * Application layer - This is the only layer that has knowledge of the implementation classes. 
+    * Dependency injection
+    * Mapping of domain/data models to view models. 
+    * Application services
+              
 # Project Structure
-  * Domain  - domain layer
+  * Domain
+    * Entities
+    * Value Objects
+    * Aggregates
+    * Events
+    * Seedwork - abstracts, base, and interfaces
+    * Services
+    
   * Core - infra layer
-  * Service - service layer
-  * API - application layer. CQRS models, command, query and event handlers
+    * Repository
+        
+  * API 
+    * Controllers
     * {feature name} - folder based on feature name
-      * Commands - returns view models and not domain models. command models / handlers
-      * Queries - returns view models and not domain models. query models / handlers
-      * Controllers
-      * EventHandlers - domain event handlers
-    * Mappers - mapping of response models to api contracts if applicable
+      * Commands - returns view models and not domain models
+        * Models
+        * Handlers
+      * Queries - returns view models and not domain models
+        * Models
+        * Handlers
+    * EventHandlers - domain event handlers
+    * Mappers - mapping of response models to api contracts
     
   * Tests
     * Unit tests - unit testing
