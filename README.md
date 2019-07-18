@@ -47,18 +47,22 @@ A C# template for building API projects with:
   * Core - infra layer
     * Repository
         
-  * API 
-    * Controllers
-    * {feature name} - folder based on feature name
-      * Commands - returns view models and not domain models
-        * Models
-        * Handlers
-      * Queries - returns view models and not domain models
-        * Models
-        * Handlers
-    * EventHandlers - domain event handlers
-    * Mappers - mapping of response models to api contracts
-    
+  * Application
+    * Root
+      * API
+        * Controllers
+        * Mappers - mapping of response models to api contracts
+    * Features
+      * {feature name} - folder based on feature name
+        * Commands - returns view models and not domain models
+          * Models
+          * Handlers
+        * Queries - returns view models and not domain models
+          * Models
+          * Handlers
+    * Handlers
+      * EventHandlers - domain event handlers
+        
   * Tests
     * Unit tests - unit testing
     * Component tests - testing end to end of API endpoints with stub data on calling external apis (if available).
