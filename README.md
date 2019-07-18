@@ -53,7 +53,7 @@ A C# template for building API projects with:
         * Controllers
         * Mappers - mapping of response models to api contracts
     * Features
-      * {feature name} - folder based on feature name
+      * {feature name}
         * Commands - returns view models and not domain models
           * Models
           * Handlers
