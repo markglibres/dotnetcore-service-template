@@ -16,6 +16,8 @@ function VSInstall
     if ($vsMininumFound) { return }
 
     write-output "VS 2019 not found.. installing"
-    choco install visualstudio2019community -Force
+    choco install visualstudio2019community -y --force
+    refreshenv
+    choco install visualstudio2019-workload-netcoretools -y --force
     
 }

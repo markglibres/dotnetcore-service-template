@@ -8,7 +8,7 @@ function DockerServiceInstall
     catch
     {
         write-host "Docker not found... installing"
-        choco install docker-desktop -y
+        choco install docker-desktop -y --force
         write-host "Docker installed"
         write-host "Starting docker"
         refreshenv
@@ -28,7 +28,7 @@ function DockerComposeInstall
     catch
     {
         write-host "Docker compose not found... installing"
-        choco install docker-compose
+        choco install docker-compose -y --force
         write-host "Docker compose installed"
     }
 }

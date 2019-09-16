@@ -28,5 +28,5 @@ function DotNetCoreSdkInstall
     if($minVersionFound) { return }
 
     write-output "DotNetCore SDK $minVersion not found.. installing"
-    choco install dotnetcore-sdk --version 2.2.203
+    choco install dotnetcore-sdk --version 2.2.203 -y --force
 }
