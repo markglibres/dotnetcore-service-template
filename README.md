@@ -1,3 +1,4 @@
+![architecture layers](https://raw.githubusercontent.com/markglibres/dotnetcore-api-template/master/assets/layers.jpg)
 
 A simple architecture inspired by ONION architecture, clean architecture, CQRS, DDD, service pattern, repository pattern, event driven design and mediator pattern…
 
