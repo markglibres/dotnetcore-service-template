@@ -262,4 +262,11 @@ public class CosmosRegistrationRepository: IRegistrationRepository
       }
 }
 ```
+### E. Tests
 
+1. Presentation.Tests - tests of controllers / responses
+2. Application.Tests - tests of handlers, application events
+3. Domain.Tests - tests of domain objects and services
+4. Infrastructure.Tests - test of repositories and service implementations
+5. Integration.Tests - api end to end testing... i.e. jest test with nodejs
+6. EndToEnd.Tests - UI end to end testing.. i.e. cypress
