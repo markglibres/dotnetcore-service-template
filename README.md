@@ -1,50 +1,46 @@
 ![architecture layers](https://raw.githubusercontent.com/markglibres/dotnetcore-api-template/master/assets/layers.jpg)
 
-A simple architecture inspired by ONION architecture, clean architecture, CQRS, DDD, service pattern, repository pattern, event driven design and mediator pattern…
+An opinionated architecture inspired by ONION architecture, clean architecture, CQRS, DDD, service pattern, repository pattern, event driven design and mediator pattern…
 
-## Project Structure (API)
+## Project Structure (API) Guidelines
 
 ### A. Presentation
 
 1.  Controllers
-    
-    1.  calls mediator (Send / Publish commands or queries)
-        
-    2.  transform api requests objects to commands / queries
-        
-    3.  transform application dtos to api responses (hal object)
+    * Calls mediator (Send / Publish of commands and queries)
+    * Transform api requests objects to commands or queries
+    * Transform application DTOs to api responses (i.e. hal or jsonapi)
+    * Example:
+    #### Example (controller)
+
+    ```
+    // controller 
+    public Task<IActionResult> RegisterUser(FormRequest request)
+    {
+        var command = _mapper.Map<RegisterUserCommand>(request);
+        var commandResponse = await _mediator.Send(command);
+
+        var apiResponse = _mapper.Map<GenericHalResponse>(commandResponse);
+
+        return Ok(apiResponse);
+    }
+    ```
         
 2.  Mappers
+    * Object mappers to and fro application DTOs
     
 3.  Requests
-    
-    1.  api requests
+    * Api request objects
         
 4.  Responses
-    
-    1.  api responses
+    * Api response objects
         
-5.  Configuration
-    
-    1.  dependency injection
-        
-    2.  injects implementation from Infrastructure layer
+5.  Configurations
+    * D.I. configurations
+    * D.I. registrations
         
 
-#### Example (controller)
 
-```
-// controller 
-public Task<IActionResult> CreateForm(FormRequest request)
-{
-    var createFormCommand = _mapper.Map<CreateFormCommand>(request);
-    var createFormResponse = await _mediator.Send(createFormCommand);
-    
-    var apiResponse = _mapper.Map<GenericHalResponse>(createFormResponse);
-    
-    return Ok(apiResponse);
-}
-```
 
 ### B. Application
 
