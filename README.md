@@ -115,16 +115,16 @@ public async Task Handle(UserRegisteredEvent @event, CancellationToken cancellat
 2. Value Objects
 3. Aggregates
 4. Events
-   - domain events only
-   - messages only used within the domain and not across different microservices / domain
-4.  Seedwork - (interfaces and abstract classes)
-   * Services
-      - IDomainEventsService
-   * Repositories
-5.  Services
-   - implementation of domain services
-   - emits domain events by calling interface for domainEventsService (Send / Publish)
-   - calls repository interfaces    
+   * domain events only
+   * messages only used within the domain and not across different microservices / domain 
+5.  Seedwork - (interfaces and abstract classes)
+      * Services
+         - IDomainEventsService
+      * Repositories 
+6.  Services
+      * implementation of domain services
+      * emits domain events by calling interface for domainEventsService (Send / Publish)
+      * calls repository interfaces    
 
 #### Example (interfaces)
 
