@@ -40,52 +40,40 @@ An opinionated architecture inspired by ONION architecture, clean architecture, 
     * D.I. registrations
         
 
-
-
 ### B. Application
 
-1.  <Feature folder>
-    
-    1.  Commands
-        
-        1.  Handlers
-            
-            1.  should only call service interfaces from domain
-                
-        2.  Mappers
-            
-        3.  Dtos
-            
-            1.  commands
-                
-            2.  responses
-                
-    2.  Queries
-        
-        1.  Handlers
-            
-            1.  should only call service interfaces from domain
-                
-        2.  Mappers
-            
-        3.  Dtos
-            
-            1.  commands
-                
-            2.  responses
-                
-2.  Events
-    
-    1.  Handlers
-        
-    2.  Dtos
-        
+1.  Events - messages shared to different domains / microservices or within application layer
+      - Handlers
+         * should only call domain / application services
+         * should not call concrete implementations
+         * should not access repository services
+         * can emit application events
+      - Dtos
+         * application events
+      - Mappers
+      
+2.  Users {folder by feature}
+      - Commands
+         - Handlers
+            * should only call domain / application services
+            * should not call concrete implementations
+            * should not access repository services
+            * emits application events
+         - Dtos
+            * commands
+            * responses
+         - Mappers 
+      - Queries
+         - Handlers
+         - Dtos
+         - Mappers
+                       
 
 #### Example (command handler)
 
 ```
-// CreateFormCommandHandler
-public async Task<CreateFormResponse> Handle(CreateFormCommand command, CancellationToken cancellationToken)
+// RegisterUserCommandHandler
+public async Task<RegisterUserResponse> Handle(RegisterUserCommand command, CancellationToken cancellationToken)
 {
     var registrationForm = _mapper.Map<RegistrationForm>(command);
     var registrationId = await _formService.Register(
@@ -94,18 +82,12 @@ public async Task<CreateFormResponse> Handle(CreateFormCommand command, Cancella
         registrationForm.email, 
         registrationForm.firstName, 
         registrationForm.lastName);
-    
-    // get and publish UserRegisteredEvent
-    // IDomainEventsService is within Application layer but implementation
-    // will be in Infrastructure layer
-    await _domainEventsService.Publish(registrationForm.DomainEvents);
-    
-    // or use Automapper
-    var response = new CreateFormResponse
-    {
-       RegistrationId = registrationId
-    }    
-    
+
+    await _applicationEventsService.Publish(new UserRegisteredEvent(registrationId));
+
+    var response = _mapper.Map<RegisterUserResponse>(RegistrationForm);
+    response.RegistrationId = registrationId;
+
     return response;
 }
 ```
