@@ -43,31 +43,27 @@ An opinionated architecture inspired by ONION architecture, clean architecture, 
 ### B. Application
 
 1.  Events - messages shared across different domains / microservices or within application layer
-      - Handlers
+      - {folder by event feature} - folder structure should be by feature. i.e. UserAddedEvent
+         * handler file
+            - naming convention should be {eventname}Handler
+            - should only call domain / application services
+            - should not call concrete implementations
+            - should not access repository services
+            - can emit application events
+         * dto
+            - objects passed / returned from / to presentation
+         * mappers
+            - if available, mapping of domain objects to dtos
+      
+2.  [Feature folder] - folder by feature.. i.e. GetUserCommand
+      - handler file
          * should only call domain / application services
          * should not call concrete implementations
          * should not access repository services
-         * can emit application events
-      - Dtos
-         * application events
-      - Mappers
-      
-2.  Users {folder by feature}
-      - Commands
-         - Handlers
-            * should only call domain / application services
-            * should not call concrete implementations
-            * should not access repository services
-            * emits application events
-         - Dtos
-            * commands
-            * responses
-         - Mappers 
-      - Queries
-         - Handlers
-         - Dtos
-         - Mappers
-                       
+         * emits application events
+      - dtos
+      - mappers 
+                             
 
 #### Example (command handler)
 
