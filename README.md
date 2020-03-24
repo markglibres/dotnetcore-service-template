@@ -268,4 +268,4 @@ public class CosmosRegistrationRepository: IRegistrationRepository
 6. EndToEnd.Tests - UI end to end testing.. i.e. cypress
 
 ### Project folder structure in summary 
-![architecture folders](https://github.com/markglibres/dotnetcore-api-template/blob/master/assets/FolderStructure.jpg?raw=true)
+![architecture folders](https://github.com/markglibres/dotnetcore-api-template/blob/master/assets/FolderStructure.1.jpg?raw=true)
