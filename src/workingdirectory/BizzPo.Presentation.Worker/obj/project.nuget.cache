@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "E7qWcVb/mt+vq0K3/ZCR2mt0rrZhoosmS89KJv193+RFsoOytNau3vrxF+zoNDNrFru0tTH6T3d33cGAco8ngQ==",
+  "success": true,
+  "projectFilePath": "D:\\_\\dotnetcore-api-template\\src\\workingdirectory\\BizzPo.Presentation.Worker\\BizzPo.Presentation.Worker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\markg\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512"
+  ],
+  "logs": []
+}

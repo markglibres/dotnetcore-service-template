@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>e8cedf7b-0e7a-41bb-a0a1-e6f694e4fd29</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BizzPo.Application\BizzPo.Application.csproj" />
+    <ProjectReference Include="..\BizzPo.Infrastructure\BizzPo.Infrastructure.csproj" />
+    <ProjectReference Include="..\BizzPo.Presentation.Common\BizzPo.Presentation.Common.csproj" />
+  </ItemGroup>
+
+</Project>

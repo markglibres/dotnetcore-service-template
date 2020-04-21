@@ -1,0 +1,16 @@
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\bin\Debug\netcoreapp3.1\BizzPo.Presentation.Common.deps.json
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\bin\Debug\netcoreapp3.1\BizzPo.Presentation.Common.dll
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\bin\Debug\netcoreapp3.1\BizzPo.Presentation.Common.pdb
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\bin\Debug\netcoreapp3.1\BizzPo.Application.dll
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\bin\Debug\netcoreapp3.1\BizzPo.Domain.dll
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\bin\Debug\netcoreapp3.1\BizzPo.Infrastructure.dll
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\bin\Debug\netcoreapp3.1\BizzPo.Application.pdb
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\bin\Debug\netcoreapp3.1\BizzPo.Infrastructure.pdb
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\bin\Debug\netcoreapp3.1\BizzPo.Domain.pdb
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\obj\Debug\netcoreapp3.1\BizzPo.Presentation.Common.csprojAssemblyReference.cache
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\obj\Debug\netcoreapp3.1\BizzPo.Presentation.Common.csproj.CoreCompileInputs.cache
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\obj\Debug\netcoreapp3.1\BizzPo.Presentation.Common.AssemblyInfoInputs.cache
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\obj\Debug\netcoreapp3.1\BizzPo.Presentation.Common.AssemblyInfo.cs
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\obj\Debug\netcoreapp3.1\BizzPo.Presentation.Common.csproj.CopyComplete
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\obj\Debug\netcoreapp3.1\BizzPo.Presentation.Common.dll
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Presentation.Common\obj\Debug\netcoreapp3.1\BizzPo.Presentation.Common.pdb

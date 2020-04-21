@@ -1,0 +1,10 @@
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\bin\Debug\netcoreapp3.1\appsettings.json
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\bin\Debug\netcoreapp3.1\BizzPo.Api.exe
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\obj\Debug\netcoreapp3.1\BizzPo.Api.csprojAssemblyReference.cache
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\obj\Debug\netcoreapp3.1\BizzPo.Api.AssemblyInfoInputs.cache
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\obj\Debug\netcoreapp3.1\BizzPo.Api.AssemblyInfo.cs
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\obj\Debug\netcoreapp3.1\BizzPo.Api.RazorTargetAssemblyInfo.cache
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\obj\Debug\netcoreapp3.1\staticwebassets\BizzPo.Api.StaticWebAssets.Manifest.cache
+D:\_\dotnetcore-api-template\src\BizzPo.Api\BizzPo.Api\obj\Debug\netcoreapp3.1\staticwebassets\BizzPo.Api.StaticWebAssets.xml

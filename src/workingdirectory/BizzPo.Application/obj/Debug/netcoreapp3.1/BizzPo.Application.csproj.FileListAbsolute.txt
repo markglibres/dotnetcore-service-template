@@ -1,0 +1,12 @@
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\bin\Debug\netcoreapp3.1\BizzPo.Application.deps.json
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\bin\Debug\netcoreapp3.1\BizzPo.Application.dll
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\bin\Debug\netcoreapp3.1\BizzPo.Application.pdb
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\bin\Debug\netcoreapp3.1\BizzPo.Domain.dll
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\bin\Debug\netcoreapp3.1\BizzPo.Domain.pdb
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\obj\Debug\netcoreapp3.1\BizzPo.Application.csprojAssemblyReference.cache
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\obj\Debug\netcoreapp3.1\BizzPo.Application.csproj.CoreCompileInputs.cache
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\obj\Debug\netcoreapp3.1\BizzPo.Application.AssemblyInfoInputs.cache
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\obj\Debug\netcoreapp3.1\BizzPo.Application.AssemblyInfo.cs
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\obj\Debug\netcoreapp3.1\BizzPo.Application.csproj.CopyComplete
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\obj\Debug\netcoreapp3.1\BizzPo.Application.dll
+D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Application\obj\Debug\netcoreapp3.1\BizzPo.Application.pdb
