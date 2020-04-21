@@ -1,9 +1,0 @@
-D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Domain\bin\Debug\netcoreapp3.1\BizzPo.Domain.deps.json
-D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Domain\bin\Debug\netcoreapp3.1\BizzPo.Domain.dll
-D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Domain\bin\Debug\netcoreapp3.1\BizzPo.Domain.pdb
-D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Domain\obj\Debug\netcoreapp3.1\BizzPo.Domain.csprojAssemblyReference.cache
-D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Domain\obj\Debug\netcoreapp3.1\BizzPo.Domain.csproj.CoreCompileInputs.cache
-D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Domain\obj\Debug\netcoreapp3.1\BizzPo.Domain.AssemblyInfoInputs.cache
-D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Domain\obj\Debug\netcoreapp3.1\BizzPo.Domain.AssemblyInfo.cs
-D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Domain\obj\Debug\netcoreapp3.1\BizzPo.Domain.dll
-D:\_\dotnetcore-api-template\src\workingdirectory\BizzPo.Domain\obj\Debug\netcoreapp3.1\BizzPo.Domain.pdb
