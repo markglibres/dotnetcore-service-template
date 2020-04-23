@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  bizzPo.presentation.api:
+    image: ${DOCKER_REGISTRY-}bizzpopresentationapi
+    build:
+      context: .
+      dockerfile: BizzPo.Presentation.Api/Dockerfile
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development

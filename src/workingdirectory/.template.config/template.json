@@ -1,0 +1,31 @@
+{
+    "author": "Mark Gil Libres",
+    "classifications": ["Api", "Worker"],
+    "name": "Microservice Template",
+    "tags": {
+        "language": "C#"
+    },
+    "identity": "bizzpo.microservice",
+    "shortName": "bizzpomicroservice",
+    "sourceName": "BizzPo",
+    "primaryOutputs": [{
+            "path": "BizzPo.Domain\\BizzPo.Domain.csproj"
+        },
+        {
+            "path": "BizzPo.Application\\BizzPo.Application.csproj"
+        },
+        {
+            "path": "BizzPo.Infrastructure\\BizzPo.Infrastructure.csproj"
+        },
+        {
+            "path": "BizzPo.Presentation.Common\\BizzPo.Presentation.Common.csproj"
+        },
+        {
+            "path": "BizzPo.Presentation.Api\\BizzPo.Presentation.Api.csproj"
+        },
+        {
+            "path": "BizzPo.Presentation.Worker\\BizzPo.Presentation.Worker.csproj"
+        }
+    ],
+    "exclude": ["**/[Bb]in/**", "**/[Oo]bj/**", ".template.config/**/*", "**/*.lock.json"]
+}
