@@ -27,5 +27,10 @@
             "path": "BizzPo.Presentation.Worker\\BizzPo.Presentation.Worker.csproj"
         }
     ],
-    "exclude": ["**/[Bb]in/**", "**/[Oo]bj/**", ".template.config/**/*", "**/*.lock.json"]
+    "exclude": [
+		"**/[Bb]in/**", 
+		"**/[Oo]bj/**", 
+		".template.config/**/*", 
+		"**/*.lock.json"
+	]
 }
