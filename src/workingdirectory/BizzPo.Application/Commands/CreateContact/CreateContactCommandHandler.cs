@@ -4,7 +4,7 @@ using BizzPo.Domain.Contacts.Seedwork;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace BizzPo.Application.CreateContact
+namespace BizzPo.Application.Commands.CreateContact
 {
     public class CreateContactCommandHandler : IRequestHandler<CreateContactCommand, CreateContactCommandResponse>
     {

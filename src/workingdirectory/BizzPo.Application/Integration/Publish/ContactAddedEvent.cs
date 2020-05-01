@@ -1,6 +1,6 @@
 ﻿using BizzPo.Application.Seedwork;
 
-namespace BizzPo.Application.CreateContact
+namespace BizzPo.Application.Publish
 {
     public class ContactAddedEvent : IIntegrationEvent
     {

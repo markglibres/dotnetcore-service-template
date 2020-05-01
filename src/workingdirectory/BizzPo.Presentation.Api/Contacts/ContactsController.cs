@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BizzPo.Application.CreateContact;
-using BizzPo.Application.GetContact;
+using BizzPo.Application.Commands.CreateContact;
+using BizzPo.Application.Queries.GetContact;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

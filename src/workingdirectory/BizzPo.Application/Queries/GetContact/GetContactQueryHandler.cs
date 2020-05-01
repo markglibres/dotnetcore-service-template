@@ -4,7 +4,7 @@ using BizzPo.Domain.Contacts.Seedwork;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace BizzPo.Application.GetContact
+namespace BizzPo.Application.Queries.GetContact
 {
     public class GetContactQueryHandler : IRequestHandler<GetContactQuery, GetContactQueryResponse>
     {

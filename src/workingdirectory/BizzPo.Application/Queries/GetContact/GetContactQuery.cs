@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace BizzPo.Application.GetContact
+namespace BizzPo.Application.Queries.GetContact
 {
     public class GetContactQuery : IRequest<GetContactQueryResponse>
     {
