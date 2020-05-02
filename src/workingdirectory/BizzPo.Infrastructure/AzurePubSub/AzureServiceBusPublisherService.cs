@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using BizzPo.Application.Seedwork;
+using BizzPo.Application.Integration.Seedwork;
 using Microsoft.Azure.ServiceBus;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -36,10 +36,15 @@ namespace BizzPo.Infrastructure.AzurePubSub
                 MessageId = @event.Id
             };
 
-            message.UserProperties.Add("messageType", @event.GetType().Name);
+            SetProperties(message, @event);
 
             await topic.SendAsync(message);
             Logger.LogInformation($"Event {@event.Id} has been published to Azure Service Bus");
+        }
+
+        protected virtual void SetProperties(Message message, T @event)
+        {
+            message.UserProperties.Add("messageType", @event.GetType().Name);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using BizzPo.Application.Subscribe.AccountCreated;
+﻿using BizzPo.Application.Integration.Subscribe.AccountCreated;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

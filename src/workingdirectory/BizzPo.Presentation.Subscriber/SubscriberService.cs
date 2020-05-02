@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BizzPo.Application.Seedwork;
+using BizzPo.Application.Integration.Seedwork;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace BizzPo.Presentation.Subscriber.Seedwork
+namespace BizzPo.Presentation.Subscriber
 {
     public class SubscriberService<T> : BackgroundService
         where T : IIntegrationEvent

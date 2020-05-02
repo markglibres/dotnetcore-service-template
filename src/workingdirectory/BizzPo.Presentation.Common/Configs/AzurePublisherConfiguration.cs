@@ -1,4 +1,4 @@
-﻿using BizzPo.Application.Seedwork;
+﻿using BizzPo.Application.Integration.Seedwork;
 using BizzPo.Infrastructure.AzurePubSub;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

@@ -23,6 +23,7 @@ namespace BizzPo.Presentation.Subscriber
         {
             services.AddPublishEvents(Configuration);
             services.AddSubscribeEvents(Configuration);
+            services.AddServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

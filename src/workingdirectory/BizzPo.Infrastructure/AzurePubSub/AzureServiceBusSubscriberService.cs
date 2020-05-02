@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using BizzPo.Application.Seedwork;
+using BizzPo.Application.Integration.Seedwork;
 using BizzPo.Domain.Seedwork;
 using Microsoft.Azure.ServiceBus;
 using Microsoft.Extensions.Logging;

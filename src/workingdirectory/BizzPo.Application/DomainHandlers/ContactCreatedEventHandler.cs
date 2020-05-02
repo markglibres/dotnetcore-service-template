@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BizzPo.Application.Publish;
-using BizzPo.Application.Seedwork;
+using BizzPo.Application.Integration.Publish;
+using BizzPo.Application.Integration.Seedwork;
 using BizzPo.Domain.Contacts.Events;
 using MediatR;
 using Microsoft.Extensions.Logging;

@@ -1,5 +1,4 @@
-using BizzPo.Application.Subscribe.AccountCreated;
-using BizzPo.Presentation.Subscriber.Seedwork;
+using BizzPo.Application.Integration.Subscribe.AccountCreated;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

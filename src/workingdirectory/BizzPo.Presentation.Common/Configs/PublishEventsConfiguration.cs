@@ -1,4 +1,4 @@
-﻿using BizzPo.Application.Publish;
+﻿using BizzPo.Application.Integration.Publish;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -27,14 +27,10 @@ namespace BizzPo.Presentation.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddPublishEvents(Configuration);
-
+            services.AddServices();
             services.AddControllers();
             services.AddHealthChecks();
-            services.AddMediatR(typeof(CreateContactCommandHandler).Assembly);
-
-            services.AddTransient<IDomainEventsService, MediatrEventsService>();
-            services.AddTransient<IContactService, ContactService>();
-            services.AddTransient<IContactRepository, InMemoryContactRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

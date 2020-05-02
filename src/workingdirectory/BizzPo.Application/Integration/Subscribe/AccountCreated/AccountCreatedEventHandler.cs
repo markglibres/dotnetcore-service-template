@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace BizzPo.Application.Subscribe.AccountCreated
+namespace BizzPo.Application.Integration.Subscribe.AccountCreated
 {
     public class AccountCreatedEventHandler : INotificationHandler<AccountCreatedEvent>
     {

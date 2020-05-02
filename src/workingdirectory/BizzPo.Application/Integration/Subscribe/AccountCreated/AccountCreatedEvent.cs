@@ -1,7 +1,7 @@
-﻿using BizzPo.Application.Seedwork;
+﻿using BizzPo.Application.Integration.Seedwork;
 using MediatR;
 
-namespace BizzPo.Application.Subscribe.AccountCreated
+namespace BizzPo.Application.Integration.Subscribe.AccountCreated
 {
     public class AccountCreatedEvent : IIntegrationEvent, INotification
     {

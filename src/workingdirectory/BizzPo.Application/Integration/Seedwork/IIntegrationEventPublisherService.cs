@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace BizzPo.Application.Seedwork
+namespace BizzPo.Application.Integration.Seedwork
 {
     public interface IIntegrationEventPublisherService<T>
         where T : IIntegrationEvent
