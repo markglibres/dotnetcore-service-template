@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BizzPo.Application.CreateContact;
-using BizzPo.Application.Seedwork;
+using BizzPo.Application.Integration.Publish;
+using BizzPo.Application.Integration.Seedwork;
 using BizzPo.Domain.Contacts.Events;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace BizzPo.Application.Events
+namespace BizzPo.Application.DomainHandlers
 {
     public class ContactCreatedEventHandler : INotificationHandler<ContactCreatedEvent>
     {
         private readonly ILogger<ContactCreatedEventHandler> _logger;
-        private readonly IIntegrationEventPublisherService _integrationEventPublisherService;
+        private readonly IIntegrationEventPublisherService<ContactAddedEvent> _integrationEventPublisherService;
 
         public ContactCreatedEventHandler(
             ILogger<ContactCreatedEventHandler> logger,
-            IIntegrationEventPublisherService integrationEventPublisherService)
+            IIntegrationEventPublisherService<ContactAddedEvent> integrationEventPublisherService)
         {
             _logger = logger;
             _integrationEventPublisherService = integrationEventPublisherService;

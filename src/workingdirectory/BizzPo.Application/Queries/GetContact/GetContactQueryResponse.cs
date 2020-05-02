@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BizzPo.Application.GetContact
+namespace BizzPo.Application.Queries.GetContact
 {
     public class GetContactQueryResponse
     {

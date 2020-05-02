@@ -7,7 +7,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace BizzPo.Infrastructure.EventBus
+namespace BizzPo.Infrastructure.DomainEvents
 {
     public class MediatrEventsService : IDomainEventsService
     {

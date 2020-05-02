@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>e8cedf7b-0e7a-41bb-a0a1-e6f694e4fd29</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <AssemblyName>BizzPo.Presentation.Subscriber</AssemblyName>
+    <RootNamespace>BizzPo.Presentation.Subscriber</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

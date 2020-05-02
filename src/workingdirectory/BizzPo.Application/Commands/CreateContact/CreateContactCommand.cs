@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace BizzPo.Application.CreateContact
+namespace BizzPo.Application.Commands.CreateContact
 {
     public class CreateContactCommand : IRequest<CreateContactCommandResponse>
     {
