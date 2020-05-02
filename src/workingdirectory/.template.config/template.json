@@ -24,7 +24,7 @@
             "path": "BizzPo.Presentation.Api\\BizzPo.Presentation.Api.csproj"
         },
         {
-            "path": "BizzPo.Presentation.Worker\\BizzPo.Presentation.Worker.csproj"
+            "path": "BizzPo.Presentation.Subscriber\\BizzPo.Presentation.Subscriber.csproj"
         }
     ],
     "exclude": [
