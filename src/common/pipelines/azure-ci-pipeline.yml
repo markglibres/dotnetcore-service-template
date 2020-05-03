@@ -29,10 +29,6 @@ steps:
       feedsToUse: 'select'
       vstsFeed: 'd4b07e43-bd8a-40b6-8de0-3a0cca5cdd48'
   
-  - task: NuGetToolInstaller@1
-    inputs:
-      versionSpec: 
-      checkLatest: true
   - task: NuGetCommand@2
     inputs:
       command: 'pack'
