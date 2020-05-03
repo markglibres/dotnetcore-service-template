@@ -24,6 +24,7 @@ namespace BizzPo.Presentation.Subscriber
             services.AddPublishEvents(Configuration);
             services.AddSubscribeEvents(Configuration);
             services.AddServices();
+            services.AddInMemoryDatabase(); //OR services.AddSqlDatabase(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

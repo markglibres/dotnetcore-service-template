@@ -1,6 +1,22 @@
 version: '3.4'
 
 services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-16.04
+    container_name: sqlserver
+    environment: 
+        - ASPNETCORE_ENVIRONMENT=Development
+        - ACCEPT_EULA=Y
+        - MSSQL_SA_PASSWORD=YourStrong!Passw0rd
+    ports:
+        - "1434:1433"
+    healthcheck:
+        test: [ "CMD", "sqlcmd", "-U", "sa", "-P", "YourStrong!Passw0rd", "-Q", "select 1" ]
+        interval: 10s
+        retries: 10
+        timeout: 5s
+        start_period: 10s
+
   bizzpo.presentation.api:
     image: ${DOCKER_REGISTRY-}bizzpopresentationapi
     build:
@@ -10,3 +26,5 @@ services:
       - "5000:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - sqlserver

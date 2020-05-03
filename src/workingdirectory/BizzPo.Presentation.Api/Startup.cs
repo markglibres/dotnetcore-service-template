@@ -21,6 +21,7 @@ namespace BizzPo.Presentation.Api
         {
             services.AddPublishEvents(Configuration);
             services.AddServices();
+            services.AddInMemoryDatabase(); //OR services.AddSqlDatabase(Configuration);
             services.AddControllers();
             services.AddHealthChecks();
         }

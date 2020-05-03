@@ -19,6 +19,8 @@ namespace BizzPo.Domain.Contacts
             Email = email;
             Firstname = firstname;
             Lastname = lastname;
+            Profile = new { };
+            ContactType = ContactTypes.Individual;
 
             Emit(new ContactCreatedEvent(Id));
         }
@@ -26,6 +28,10 @@ namespace BizzPo.Domain.Contacts
         public string Email { get; private set; }
         public string Firstname { get; private set; }
         public string Lastname { get; private set; }
+        public dynamic Profile { get; private set; }
+        public decimal Salary { get; private set; }
+
+        public ContactTypes ContactType { get; private set; }
 
         public void SetEmail(string email)
         {

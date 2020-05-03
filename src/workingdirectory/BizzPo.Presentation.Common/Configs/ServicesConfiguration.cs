@@ -1,7 +1,6 @@
 ﻿using BizzPo.Application.Commands.CreateContact;
 using BizzPo.Core.Domain;
 using BizzPo.Core.Infrastructure.Messaging.MediatR;
-using BizzPo.Core.Infrastructure.Repository.InMemory;
 using BizzPo.Domain.Contacts;
 using BizzPo.Domain.Contacts.Seedwork;
 using MediatR;
@@ -17,7 +16,6 @@ namespace BizzPo.Presentation.Common.Configs
 
             services.AddTransient<IDomainEventsService, MediatrDomainEventsService>();
             services.AddTransient<IContactService, ContactService>();
-            services.AddTransient<IRepository<Contact>, InMemoryRepository<Contact>>();
         }
     }
 }

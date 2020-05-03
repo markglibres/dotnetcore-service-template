@@ -13,7 +13,6 @@ namespace BizzPo.Presentation.Common.Configs
             var connectionStringSection = configuration.GetSection("ConnectionStrings");
             var azureServiceBusConnectionString = connectionStringSection["AzureServiceBus"];
             var contactEventTopic = configuration.GetValue<string>("Events:Publish:ContactAddedEvent:Topic");
-            ;
 
             services.AddPublishEvent<ContactAddedEvent>(azureServiceBusConnectionString, contactEventTopic);
         }
