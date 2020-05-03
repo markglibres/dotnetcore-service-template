@@ -45,4 +45,5 @@ steps:
       command: 'push'
       nuGetFeedType: external
       includeNugetOrg: true
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
   
