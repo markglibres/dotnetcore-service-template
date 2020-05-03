@@ -43,7 +43,7 @@ steps:
   - task: NuGetCommand@2
     inputs:
       command: 'push'
-      nuGetFeedType: external
       feedsToUse: config 
       packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+      nugetConfigPath: '$(Build.WorkingDirectory)/NuGet.config'
   
