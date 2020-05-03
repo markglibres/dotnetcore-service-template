@@ -4,7 +4,9 @@ using Microsoft.Extensions.Logging;
 
 namespace BizzPo.Infrastructure.DomainEvents
 {
-    //implement your own service here
+    //do your own implementation of IDomainEventsService
+    //or you can inherit / use from
+    //BizzPo.Core.Infrastructure.Messaging.MediatR.MediatrDomainEventsService
     public class MediatrEventsService : MediatrDomainEventsService
     {
         public MediatrEventsService(
