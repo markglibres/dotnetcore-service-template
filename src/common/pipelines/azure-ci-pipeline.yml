@@ -4,7 +4,14 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+  branches:
+      include:
+      - master
+  paths:
+      include:
+      - src/common/*
+      exclude:
+      - src/common/README.md
 
 variables:
   Major: '1'
@@ -29,5 +36,15 @@ steps:
       minorVersion: '$(Minor)'
       patchVersion: '$(Patch)'
 
+  - task: NuGetAuthenticate@0
+    inputs:
+      nuGetServiceConnections: 'BizzPo Nuget'
+
+  - task: NuGetCommand@2
+    inputs:
+      command: 'push'
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+      nuGetFeedType: 'external'
+      publishFeedCredentials: 'BizzPo Nuget'
   
   
