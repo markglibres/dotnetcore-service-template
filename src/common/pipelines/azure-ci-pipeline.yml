@@ -43,6 +43,6 @@ steps:
   - task: NuGetCommand@2
     inputs:
       command: 'push'
-      feedsToUse: 'select'
+      nuGetFeedType: external
       includeNugetOrg: true
   
