@@ -22,10 +22,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - task: DotNetCoreCLI@2
+  - task: NuGetCommand@2
     inputs:
-      command: 'build'
-      projects: 'src/common/BizzPo.Core/*.csproj'
+      command: 'restore'
+      restoreSolution: 'src/common/**/*.sln'
+      feedsToUse: 'select'
+      vstsFeed: 'd4b07e43-bd8a-40b6-8de0-3a0cca5cdd48'
   
   - task: NuGetToolInstaller@1
     inputs:
@@ -47,5 +49,6 @@ steps:
   - task: NuGetCommand@2
     inputs:
       command: 'push'
-      nuGetFeedType: 'external'
+      feedsToUse: 'select'
+      includeNugetOrg: true
   
