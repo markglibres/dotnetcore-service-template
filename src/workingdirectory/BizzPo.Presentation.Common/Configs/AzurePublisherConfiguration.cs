@@ -1,5 +1,5 @@
-﻿using BizzPo.Application.Integration.Seedwork;
-using BizzPo.Infrastructure.AzurePubSub;
+﻿using BizzPo.Core.Application;
+using BizzPo.Core.Infrastructure.Messaging.AzureServiceBus;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -15,10 +15,10 @@ namespace BizzPo.Presentation.Common.Configs
         {
             services.AddTransient<
                 IIntegrationEventPublisherService<T>,
-                AzureServiceBusPublisherService<T>>(provider =>
+                EventPublisherService<T>>(provider =>
             {
                 var logger = provider.GetService<ILogger<T>>();
-                return new AzureServiceBusPublisherService<T>(
+                return new EventPublisherService<T>(
                     logger,
                     connectionString,
                     topic);

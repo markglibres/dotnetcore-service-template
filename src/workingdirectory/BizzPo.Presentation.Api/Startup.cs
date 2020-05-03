@@ -1,11 +1,4 @@
-using BizzPo.Application.Commands.CreateContact;
-using BizzPo.Domain.Contacts;
-using BizzPo.Domain.Contacts.Seedwork;
-using BizzPo.Domain.Seedwork;
-using BizzPo.Infrastructure.DomainEvents;
-using BizzPo.Infrastructure.Repositories;
 using BizzPo.Presentation.Common.Configs;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -30,7 +23,6 @@ namespace BizzPo.Presentation.Api
             services.AddServices();
             services.AddControllers();
             services.AddHealthChecks();
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

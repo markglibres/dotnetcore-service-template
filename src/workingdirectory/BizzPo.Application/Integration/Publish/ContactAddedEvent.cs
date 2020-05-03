@@ -1,4 +1,4 @@
-﻿using BizzPo.Application.Integration.Seedwork;
+﻿using BizzPo.Core.Application;
 
 namespace BizzPo.Application.Integration.Publish
 {

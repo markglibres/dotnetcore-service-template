@@ -1,13 +1,12 @@
 ﻿using System;
 using Ardalis.GuardClauses;
-using BizzPo.Domain.Seedwork;
 
 namespace BizzPo.Domain.Extensions
 {
     public static class GuardClauseExtensions
     {
         public static void Empty<T>(this IGuardClause guardClause, string input, string parameterName)
-            where T: DomainException
+            where T : Exception
         {
             if (!string.IsNullOrWhiteSpace(input)) return;
 
@@ -16,7 +15,7 @@ namespace BizzPo.Domain.Extensions
         }
 
         public static void Empty<T>(this IGuardClause guardClause, Guid input, string parameterName)
-            where T : DomainException
+            where T : Exception
         {
             if (!Guid.Empty.Equals(input)) return;
 
@@ -25,9 +24,9 @@ namespace BizzPo.Domain.Extensions
         }
 
         private static void ThrowError<T>(string message)
-            where T : DomainException
+            where T : Exception
         {
-            throw (T)Activator.CreateInstance(typeof(T), new object[] { message });
+            throw (T) Activator.CreateInstance(typeof(T), message);
         }
     }
 }

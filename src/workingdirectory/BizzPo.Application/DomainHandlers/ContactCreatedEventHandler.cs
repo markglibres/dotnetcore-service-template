@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using BizzPo.Application.Integration.Publish;
-using BizzPo.Application.Integration.Seedwork;
+using BizzPo.Core.Application;
 using BizzPo.Domain.Contacts.Events;
 using MediatR;
 using Microsoft.Extensions.Logging;

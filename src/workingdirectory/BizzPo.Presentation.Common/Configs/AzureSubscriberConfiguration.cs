@@ -1,6 +1,6 @@
-﻿using BizzPo.Application.Integration.Seedwork;
-using BizzPo.Domain.Seedwork;
-using BizzPo.Infrastructure.AzurePubSub;
+﻿using BizzPo.Core.Application;
+using BizzPo.Core.Domain;
+using BizzPo.Core.Infrastructure.Messaging.AzureServiceBus;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -18,12 +18,12 @@ namespace BizzPo.Presentation.Common.Configs
         {
             services.AddTransient<
                 IIntegrationEventSubscriberService<T>,
-                AzureServiceBusSubscriberService<T>>(provider =>
+                EventSubscriberService<T>>(provider =>
             {
                 var logger = provider.GetService<ILogger<T>>();
                 var domainEventsService = provider.GetService<IDomainEventsService>();
 
-                return new AzureServiceBusSubscriberService<T>(
+                return new EventSubscriberService<T>(
                     logger,
                     domainEventsService,
                     connectionString,

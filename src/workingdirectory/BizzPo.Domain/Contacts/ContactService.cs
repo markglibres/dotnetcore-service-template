@@ -2,38 +2,38 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.GuardClauses;
+using BizzPo.Core.Domain;
 using BizzPo.Domain.Contacts.Seedwork;
 using BizzPo.Domain.Extensions;
-using BizzPo.Domain.Seedwork;
 using Microsoft.Extensions.Logging;
 
 namespace BizzPo.Domain.Contacts
 {
     public class ContactService : IContactService
     {
-        private readonly IContactRepository _contactRepository;
         private readonly IDomainEventsService _domainEventsService;
         private readonly ILogger<ContactService> _logger;
+        private readonly IRepository<Contact> _repository;
 
         public ContactService(
             ILogger<ContactService> logger,
             IDomainEventsService domainEventsService,
-            IContactRepository contactRepository)
+            IRepository<Contact> repository)
         {
             _logger = logger;
             _domainEventsService = domainEventsService;
-            _contactRepository = contactRepository;
+            _repository = repository;
         }
 
         public async Task<Contact> Create(string email, string firstname, string lastname)
         {
-            Guard.Against.Empty<ContactsException>(email, "email");
-            Guard.Against.Empty<ContactsException>(firstname, "firstname");
-            Guard.Against.Empty<ContactsException>(lastname, "lastname");
+            Guard.Against.Empty<DomainException>(email, "email");
+            Guard.Against.Empty<DomainException>(firstname, "firstname");
+            Guard.Against.Empty<DomainException>(lastname, "lastname");
 
             var contact = new Contact(email, firstname, lastname);
 
-            await _contactRepository.InsertAsync(contact);
+            await _repository.InsertAsync(contact);
             await _domainEventsService.Publish(contact.Events, CancellationToken.None);
 
             return contact;
@@ -41,24 +41,24 @@ namespace BizzPo.Domain.Contacts
 
         public async Task<Contact> GetById(Guid id)
         {
-            Guard.Against.Empty<ContactsException>(id, "id");
+            Guard.Against.Empty<DomainException>(id, "id");
 
-            var contact = await _contactRepository.GetAsync(id);
+            var contact = await _repository.GetSingleAsync(c => c.Id.Equals(id));
             return contact;
         }
 
         public async Task<Contact> UpdateEmail(Guid id, string email)
         {
-            Guard.Against.Empty<ContactsException>(id, "id");
-            Guard.Against.Empty<ContactsException>(email, "email");
+            Guard.Against.Empty<DomainException>(id, "id");
+            Guard.Against.Empty<DomainException>(email, "email");
 
-            var contact = await _contactRepository.GetAsync(id);
+            var contact = await _repository.GetSingleAsync(c => c.Id.Equals(id));
 
-            if (contact == null) throw new ContactsException($"Cannot find contact {id}");
+            if (contact == null) throw new DomainException($"Cannot find contact {id}");
 
             contact.SetEmail(email);
 
-            await _contactRepository.SaveAsync(contact);
+            await _repository.SaveAsync(contact);
             await _domainEventsService.Publish(contact.Events, CancellationToken.None);
 
             return contact;

@@ -1,11 +1,11 @@
-﻿using BizzPo.Application.Integration.Seedwork;
+﻿using BizzPo.Core.Application;
 using MediatR;
 
 namespace BizzPo.Application.Integration.Subscribe.AccountCreated
 {
     public class AccountCreatedEvent : IIntegrationEvent, INotification
     {
-        public string Id { get; set; }
         public string AccountId { get; set; }
+        public string Id { get; set; }
     }
 }

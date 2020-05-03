@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPo.Domain", "BizzPo.Domain\BizzPo.Domain.csproj", "{C0A9AF72-0972-47FC-9336-94D351FC45A1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPo.Infrastructure", "BizzPo.Infrastructure\BizzPo.Infrastructure.csproj", "{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPo.Application", "BizzPo.Application\BizzPo.Application.csproj", "{963640C1-6950-4499-94F3-67C7E493DB01}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPo.Presentation.Api", "BizzPo.Presentation.Api\BizzPo.Presentation.Api.csproj", "{EF4C28E4-445A-4F7B-B9F0-41D01F8F14F5}"
@@ -29,10 +27,6 @@ Global
 		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{963640C1-6950-4499-94F3-67C7E493DB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{963640C1-6950-4499-94F3-67C7E493DB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{963640C1-6950-4499-94F3-67C7E493DB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
