@@ -27,6 +27,10 @@ steps:
       command: 'build'
       projects: 'src/common/BizzPo.Core/*.csproj'
   
+  - task: NuGetToolInstaller@1
+    inputs:
+      versionSpec: 
+      checkLatest: true
   - task: NuGetCommand@2
     inputs:
       command: 'pack'
