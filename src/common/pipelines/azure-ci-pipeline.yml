@@ -25,7 +25,7 @@ steps:
   - task: NuGetCommand@2
     inputs:
       command: 'restore'
-      restoreSolution: 'src/common/**/*.sln'
+      restoreSolution: 'src/common/BizzPo.Core/*.csproj'
       feedsToUse: 'select'
       vstsFeed: 'd4b07e43-bd8a-40b6-8de0-3a0cca5cdd48'
   
