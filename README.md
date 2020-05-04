@@ -12,6 +12,12 @@ The template combines the following patterns / architecture / design:
 * Clean architecture
 * Domain driven design
 
+## Prerequisites
+* dotnetcore sdk 3.1 <
+* visual studio 2019 <
+* mssql server (or docker - run mssql on docker)
+* azure service bus (optional)
+
 ## The layers
 ![enter image description here](https://raw.githubusercontent.com/markglibres/dotnetcore-api-template/master/assets/layers.jpg)
 
