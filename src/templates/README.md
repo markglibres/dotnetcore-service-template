@@ -8,7 +8,7 @@
    ```
  2. Change directory
  ```
- cd dotnetcore-api-template
+ cd dotnetcore-service-template
  ``` 
  4. Install using dotnet new
  ```
