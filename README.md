@@ -50,4 +50,4 @@ This layer depends on Application and Domain.
 
 
 ##
-Follow this [link](https://github.com/markglibres/dotnetcore-api-template/tree/master/src/templates) on how to use the template for your project with included code samples. 
+Follow this [link](https://github.com/markglibres/dotnetcore-service-template/wiki/How-to-install-template) on how to use the template for your project with included code samples. 
