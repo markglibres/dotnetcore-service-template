@@ -10,6 +10,7 @@ namespace BizzPo.Core.Domain
         {
             Events = new List<IEvent>();
             Id = Guid.NewGuid();
+            DateCreated = DateTime.Now;
         }
 
         public Guid Id { get; private set; }
