@@ -29,6 +29,12 @@ namespace BizzPo.Core.Infrastructure.Repository.EntityFramework
             return await filtered.ToListAsync();
         }
 
+        public async Task DeleteAsync(T entity)
+        {
+            DbContext.Set<T>().Remove(entity);
+            await DbContext.SaveChangesAsync();
+        }
+
         public virtual async Task<T> GetSingleAsync(Expression<Func<T, bool>> filter)
         {
             return await DbContext.Set<T>().FirstOrDefaultAsync(filter);

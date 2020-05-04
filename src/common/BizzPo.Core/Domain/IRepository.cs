@@ -14,5 +14,6 @@ namespace BizzPo.Core.Domain
         Task<T> GetSingleAsync(Expression<Func<T, bool>> filter);
         IQueryable<T> GetAll();
         Task<IEnumerable<T>> GetByAsync(Func<IQueryable<T>, IQueryable<T>> filter);
+        Task DeleteAsync(T entity);
     }
 }

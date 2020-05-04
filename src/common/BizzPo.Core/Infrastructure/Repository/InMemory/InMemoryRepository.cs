@@ -55,5 +55,13 @@ namespace BizzPo.Core.Infrastructure.Repository.InMemory
             var response = filter(_inMemoryRecords);
             return Task.FromResult(response.AsEnumerable());
         }
+
+        public Task DeleteAsync(T entity)
+        {
+            var records = _inMemoryRecords.ToList();
+            records.Remove(entity);
+
+            return Task.CompletedTask;
+        }
     }
 }
