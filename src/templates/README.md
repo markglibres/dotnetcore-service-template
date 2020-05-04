@@ -4,7 +4,7 @@
 
  1. Clone repository to your local (any temp folder will do)
    ``` 
-      git clone   git@github.com:markglibres/dotnetcore-api-template.git
+      git clone   git@github.com:markglibres/dotnetcore-service-template.git
    ```
  2. Change directory
  ```
