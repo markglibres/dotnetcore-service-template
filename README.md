@@ -1,3 +1,5 @@
+# DotNetCore Service Project Template
+
 This is a C# project template for an api / grpc / background service app. The goal is to create a backend microservice in just a few minutes with a clean and loosely-coupled architecture. The idea came up after working with choreography and orchestrator microservices pattern, modular monolith, monolith, and tightly-coupled microservices projects. 
 
 The template combines the following patterns / architecture / design:
