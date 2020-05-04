@@ -1,271 +1,51 @@
-![architecture layers](https://raw.githubusercontent.com/markglibres/dotnetcore-api-template/master/assets/layers.jpg)
+This is a C# project template for an api / grpc / background service app. The goal is to create a backend microservice in just a few minutes with a clean and loosely-coupled architecture. The idea came up after working with choreography and orchestrator microservices pattern, modular monolith, monolith, and tightly-coupled microservices projects. 
 
-An opinionated architecture inspired by ONION architecture, clean architecture, CQRS, DDD, service pattern, repository pattern, event driven design and mediator pattern…
+The template combines the following patterns / architecture / design:
+* IoC (dependency injection)
+* Event-driven design
+* CQRS
+* Service layer pattern
+* Repository pattern
+* Mediator pattern
+* Clean architecture
+* Domain driven design
 
-## Project Structure (API) Guidelines
+## The layers
+![enter image description here](https://raw.githubusercontent.com/markglibres/dotnetcore-api-template/master/assets/layers.jpg)
 
-### A. Presentation
+### Presentation
+Consider this layer as the entry point of your application, may it be MVC app, API, GRpc, or a background service. For an API, this is where you receive the HTTP requests and sends the HTTP response. For a background worker, this is where you schedule or run a task. As a rule, you only expose presentation models to the consumers and not the ones coming from domain, application or infrastructure.  There should be no processing of business logics on this layer. It should only be mapping models required by application layer **(CQRS models)** and mapping of models returned by application layer through a mediator (will be explained below). Dependency injection **(IoC)** should also take place on this layer.
 
-1.  Controllers
-    * Calls mediator (Send / Publish of commands and queries)
-    * Transform api requests objects to commands or queries
-    * Transform application DTOs to api responses (i.e. hal or jsonapi)
-    * Example:
-    #### Example (controller)
+This will depend on Infrastructure and Application layer.
 
-    ```
-    // controller 
-    public Task<IActionResult> RegisterUser(FormRequest request)
-    {
-        var command = _mapper.Map<RegisterUserCommand>(request);
-        var commandResponse = await _mediator.Send(command);
+### Application
+The main responsibility of this layer is to bridge the Presentation and Domain layer by using MediatR **(Mediator Pattern)**. The presentation layer will pass the commands or queries models, then the application layer will handle their execution. The command / query handler should only call interfaces of domain services **(Service layer pattern)**, but never the repository interfaces. 
 
-        var apiResponse = _mapper.Map<GenericHalResponse>(commandResponse);
+This layer is also responsible for the integration to other services by sending Integration Events **(Event-Driven Design)**. This is where the Integration Events Service interface should reside. This layer knows what integration events to send to other services. 
 
-        return Ok(apiResponse);
-    }
-    ```
-        
-2.  Mappers
-    * Object mappers to and fro application DTOs
-    
-3.  Requests
-    * Api request objects
-        
-4.  Responses
-    * Api response objects
-        
-5.  Configurations
-    * D.I. configurations
-    * D.I. registrations
-        
+Handlers for the emitted domain events should also reside on this layer. Same as the command / query handlers, it should only be calling domain services but not the repository interfaces. 
 
-### B. Application
+This layer should not expose or return domain models, but should map it to an application data model. It shouldn't directly call domain model methods, it has to go through the domain service.
 
-1.  Events - messages shared across different domains / microservices or within application layer
-      - {folder by event feature} - folder structure should be by feature. i.e. UserAddedEvent
-         * handler file
-            - naming convention should be {eventname}Handler
-            - should only call domain / application services
-            - should not call concrete implementations
-            - should not access repository services
-            - can emit application events
-         * dto
-            - objects passed / returned from / to presentation
-         * mappers
-            - if available, mapping of domain objects to dtos
-      
-2.  [Feature folder] - folder by feature.. i.e. GetUserCommand
-      - handler file
-         * should only call domain / application services
-         * should not call concrete implementations
-         * should not access repository services
-         * emits application events
-      - dtos
-      - mappers 
-                             
+This layer will have the Domain layer as its only dependency. 
 
-#### Example (command handler)
+### Domain
+This layer does not have any dependency. It will contain the following:
+* Domain models - The business data models. Should not define database specific fields. **(follow DDD)**
+* Domain services - This contains the business logic. This is where "servicing" of domain models happens and calling the repository to create, update, delete and publishing of domain events. (by calling repository and domain events service interfaces)
+* Domain events - These are events emitted by the domain models. They are not created by the domain services, but they are extracted from the data models after "servicing". 
+* Repository interfaces - This interface defines how data models interact with database (insert, save, delete, etc). For simplicity, repository found on this template does not separate the command / query responsibility. 
+* Domain events service interface - This is an interface for publishing domain events.
 
-```
-// RegisterUserCommandHandler
-public async Task<RegisterUserResponse> Handle(RegisterUserCommand command, CancellationToken cancellationToken)
-{
-    var registrationForm = _mapper.Map<RegistrationForm>(command);
-    var registrationId = await _registrationService.Register(
-        registrationForm.username,
-        registrationForm.password, 
-        registrationForm.email, 
-        registrationForm.firstName, 
-        registrationForm.lastName);
+### Infrastructure
+This layer is the implementation layer, which means, anything tech / implementation specific should reside on this layer. While the domain defines the repository interfaces and domain events service interface, Infrastructure layer will implement it. For example, your repository can be on MSSQL using EFCore or Azure CosmosDB.
 
-    // informs other microservices (i.e. analytics) that a successful registration has completed
-    await _applicationEventsService.Publish(new SuccessfulRegistrationEvent(registrationId));
+This layer should not contain any business specific logic. 
 
-    var response = _mapper.Map<RegisterUserResponse>(RegistrationForm);
-    response.RegistrationId = registrationId;
+This also implements the application services such as integration event service with Azure Service Bus. 
 
-    return response;
-}
-```
+This layer depends on Application and Domain. 
 
-#### Example (event handler)
 
-```
-// Registration Event handler
-// UserRegisteredEvent is emitted by domain
-public async Task Handle(UserRegisteredEvent @event, CancellationToken cancellationToken)
-{
-    var registration = await _registrationService.Get(@event.registrationId);
-    var user = await _userService.Get(registration.UserId);
-    
-    // IEmailService will be in Application Layer but implemented
-    // on Infrastructure layer
-    await _emailService.SendWelcome(user);
-}
-```
-
-### C. Domain
-
-1. Entities
-2. Value Objects
-3. Aggregates
-4. Events
-   * domain events only
-   * messages only used within the domain and not across different microservices / domain 
-5.  Seedwork - (interfaces and abstract classes)
-      * Services
-         - IDomainEventsService
-      * Repositories 
-6.  Services
-      * implementation of domain services
-      * emits domain events by calling interface for domainEventsService (Send / Publish)
-      * calls repository interfaces    
-
-#### Example (interfaces)
-
-```
-// implementation will be on Domain layer
-public interface IRegistrationService 
-{
-    Task<string> Register(
-        string username,
-        string password, 
-        string email, 
-        string firstName, 
-        string lastName);
-}
-
-// implementation will be on Domain layer
-public interface IUserService
-{
-    Task<User> Get(string userId);
-    Task<bool> IsUserExists(string email);
-}
-
-// implementation will be on Infrastructure layer
-public interface IRegistrationRepository
-{
-    Task<string> Insert(RegistrationForm form); 
-}
-
-// implementation will be on Infrastructure layer
-public interface IUserRepository
-{
-  Task<User> GetByUserId(string userId);
-}
-```
-
-#### Example (services)
-
-```
-public class RegistrationService: IRegistrationService
-{
-    private readonly IRegistrationRepository _repository;
-    private readonly IUserService _userService;
-    private readonly IDomainEventsService _domainEventsService;
-    
-    public RegistrationService(
-        IRegistrationRepository repository,
-        IUserService userService,
-        IDomainEventsService domainEventsService
-    )
-    {
-        _repository = repository;
-        _userService = userService;
-        _domainEventsService = domainEventsService;
-    }
-    
-    public async Task<string> Register(
-        string username,
-        string password, 
-        string email, 
-        string firstName, 
-        string lastName)
-    {
-        if(_userService.IsUserExists(email))
-        {
-            throw new UserAlreadyExistsException(email);
-        }
-        
-        var user = _userService.Create(username, email, _hashService.Generate(password), firstName, lastName);
-        var form = new RegistrationForm(user.Id);;
-        var id = await _repository.Insert(form);
-        
-        await _domainEventsService.Publish(form.DomainEvents);
-        
-        return id.ToString();
-    }
-}
-```
-
-#### Example (entity and events)
-
-```
-public class RegistrationForm: IDomainEntity, IDomainEvents
-{
-    public Guid Id { get; }
-    public Guid UserId { get; }
-    public DateTime DateCreated { get; }
-    public IEnumerable<IDomainEvent> DomainEvents { get; private set; }
-    
-    public RegistrationForm(string userId)
-    {
-        Id = Guid.New();
-        UserId = Guid.Parse(userId);
-        DateCreated = DateTime.Now;
-        
-        DomainEvents.Add(new UserRegisteredEvent
-        {
-            UserId = UserId;
-            RegistrationId = Id;
-        });
-    }
-}
-```
-
-### D. Infrastructure
-
-1.  Application - implementation of application services
-    * Services
-      - i.e. ApplicationEventsService
-2.  Domain - implementation of domain services
-    * Repositories
-    * Services
-
-#### Example (repository)
-
-```
-public class CosmosRegistrationRepository: IRegistrationRepository
-{
-    private readonly Container _container;
-    
-    public CosmosRegistrationRepository(
-        IOptions<CosmosDbConfig> options,
-        Database database)
-    {
-        var containerConfig = options.Value.Registration;
-        _container = database.GetContainer(containerConfig.ContainerName);
-    }
-    
-     public async Task<string> Insert(RegistrationForm form)
-      {
-          Guard.Against.MissingEmail(form.email);
-          
-          await _container.CreateItemAsync(form);
-          
-          return form.Id;
-      }
-}
-```
-### E. Tests
-
-1. Presentation.Tests - tests of controllers / responses
-2. Application.Tests - tests of handlers, application events
-3. Domain.Tests - tests of domain objects and services
-4. Infrastructure.Tests - test of repositories and service implementations
-5. Integration.Tests - api end to end testing... i.e. jest test with nodejs
-6. EndToEnd.Tests - UI end to end testing.. i.e. cypress
-
-### Project folder structure in summary 
-![architecture folders](https://github.com/markglibres/dotnetcore-api-template/blob/master/assets/FolderStructure.1.jpg?raw=true)
+##
+Follow this [link](https://github.com/markglibres/dotnetcore-api-template/tree/master/src/templates) on how to use the template for your project with included code samples. 
