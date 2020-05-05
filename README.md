@@ -54,6 +54,8 @@ This also implements the application services such as integration event service 
 
 This layer depends on Application and Domain. 
 
+## The layers in detail
+![enter image description here](https://raw.githubusercontent.com/markglibres/dotnetcore-api-template/master/assets/layers_detailed.jpg)
 
 ##
 Follow this [link](https://github.com/markglibres/dotnetcore-service-template/wiki/How-to-install-template) on how to use the template for your project with included code samples. 
