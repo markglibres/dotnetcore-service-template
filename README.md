@@ -21,6 +21,9 @@ The template combines the following patterns / architecture / design:
 ## The layers
 ![enter image description here](https://raw.githubusercontent.com/markglibres/dotnetcore-api-template/master/assets/layers.jpg)
 
+## The layers in detail
+![enter image description here](https://raw.githubusercontent.com/markglibres/dotnetcore-api-template/master/assets/layers_detailed.jpg)
+
 ### Presentation
 Consider this layer as the entry point of your application, may it be MVC app, API, GRpc, or a background service. For an API, this is where you receive the HTTP requests and sends the HTTP response. For a background worker, this is where you schedule or run a task. As a rule, you only expose presentation models to the consumers and not the ones coming from domain, application or infrastructure.  There should be no processing of business logics on this layer. It should only be mapping models required by application layer **(CQRS models)** and mapping of models returned by application layer through a mediator (will be explained below). Dependency injection **(IoC)** should also take place on this layer.
 
@@ -53,9 +56,6 @@ This layer should not contain any business specific logic.
 This also implements the application services such as integration event service with Azure Service Bus. 
 
 This layer depends on Application and Domain. 
-
-## The layers in detail
-![enter image description here](https://raw.githubusercontent.com/markglibres/dotnetcore-api-template/master/assets/layers_detailed.jpg)
 
 ##
 Follow this [link](https://github.com/markglibres/dotnetcore-service-template/wiki/How-to-install-template) on how to use the template for your project with included code samples. 
