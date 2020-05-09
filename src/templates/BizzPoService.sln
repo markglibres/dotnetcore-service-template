@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPoService.Domain", "BizzPoService.Domain\BizzPoService.Domain.csproj", "{C0A9AF72-0972-47FC-9336-94D351FC45A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPoService.Application", "BizzPoService.Application\BizzPoService.Application.csproj", "{963640C1-6950-4499-94F3-67C7E493DB01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPoService.Presentation.Api", "BizzPoService.Presentation.Api\BizzPoService.Presentation.Api.csproj", "{EF4C28E4-445A-4F7B-B9F0-41D01F8F14F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution-items", ".solution-items", "{3676A3F3-E804-4574-9FF2-B19845CD42FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPoService.Presentation.Subscriber", "BizzPoService.Presentation.Subscriber\BizzPoService.Presentation.Subscriber.csproj", "{560BD805-B7A4-49E1-A7AF-E73B179FFDD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPoService.Presentation.Common", "BizzPoService.Presentation.Common\BizzPoService.Presentation.Common.csproj", "{2EB8A278-1820-4431-87B0-AE69DC039889}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizzPoService.Infrastructure", "BizzPoService.Infrastructure\BizzPoService.Infrastructure.csproj", "{69A8C25E-38DD-44FD-B646-5115FDBE4FC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{963640C1-6950-4499-94F3-67C7E493DB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{963640C1-6950-4499-94F3-67C7E493DB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{963640C1-6950-4499-94F3-67C7E493DB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{963640C1-6950-4499-94F3-67C7E493DB01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF4C28E4-445A-4F7B-B9F0-41D01F8F14F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF4C28E4-445A-4F7B-B9F0-41D01F8F14F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF4C28E4-445A-4F7B-B9F0-41D01F8F14F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF4C28E4-445A-4F7B-B9F0-41D01F8F14F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{560BD805-B7A4-49E1-A7AF-E73B179FFDD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{560BD805-B7A4-49E1-A7AF-E73B179FFDD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{560BD805-B7A4-49E1-A7AF-E73B179FFDD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{560BD805-B7A4-49E1-A7AF-E73B179FFDD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EB8A278-1820-4431-87B0-AE69DC039889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB8A278-1820-4431-87B0-AE69DC039889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB8A278-1820-4431-87B0-AE69DC039889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB8A278-1820-4431-87B0-AE69DC039889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A8C25E-38DD-44FD-B646-5115FDBE4FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A8C25E-38DD-44FD-B646-5115FDBE4FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A8C25E-38DD-44FD-B646-5115FDBE4FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A8C25E-38DD-44FD-B646-5115FDBE4FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A15C6A03-6431-4C50-A248-7E836B75F0BC}
+	EndGlobalSection
+EndGlobal
