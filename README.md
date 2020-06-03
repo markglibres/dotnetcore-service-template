@@ -1,3 +1,4 @@
+
 # DotNetCore Service Project Template
 
 This is a C# project template for an api / grpc / background service app. The goal is to create a backend microservice in just a few minutes with a clean and loosely-coupled architecture. The idea came up after working with choreography and orchestrator microservices pattern, modular monolith, monolith, and tightly-coupled microservices projects. 
@@ -59,3 +60,18 @@ This layer depends on Application and Domain.
 
 ##
 Follow this [link](https://github.com/markglibres/dotnetcore-service-template/wiki/How-to-install-template) on how to use the template for your project with included code samples. 
+
+## Architectures
+Usage of this project template can be applied to different architectures and provide flexibility when switching. See digrams below on how you can achieve from monolith to microservices:
+
+### Modular Monolith
+![Modular Monolith](https://github.com/markglibres/dotnetcore-service-template/blob/master/assets/Modular_Monolith.jpg?raw=true)
+
+### Microservice - Choreography
+![Choreography](https://github.com/markglibres/dotnetcore-service-template/blob/master/assets/Choreography_Microservice.jpg?raw=true)
+
+### Microservice - Orchestrator
+![Orchestrator](https://github.com/markglibres/dotnetcore-service-template/blob/master/assets/Orchestrator_Microservice.jpg?raw=true)
+
+### Microservice - Hybrid
+![Hybrid](https://github.com/markglibres/dotnetcore-service-template/blob/master/assets/Hybrid_Microservice.jpg?raw=true)
