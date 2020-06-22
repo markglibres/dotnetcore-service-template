@@ -55,7 +55,7 @@ This layer is the implementation layer, which means, anything tech / implementat
 
 This layer should not contain any business specific logic. 
 
-This also implements the application services such as integration event service with Azure Service Bus. 
+This also implements the integration services such as integration event service with Azure Service Bus. 
 
 This layer depends on Application and Domain. 
 
